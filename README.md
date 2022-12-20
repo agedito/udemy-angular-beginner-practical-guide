@@ -25,3 +25,4 @@ Code from [**Angular Beginner Practical Guide** udemy course](https://www.udemy.
 ### CSS
 
 - [Normalize.css](https://necolas.github.io/normalize.css/)
+- [Google Fonts](https://fonts.google.com/)
