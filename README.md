@@ -26,3 +26,4 @@ Code from [**Angular Beginner Practical Guide** udemy course](https://www.udemy.
 
 - [Normalize.css](https://necolas.github.io/normalize.css/)
 - [Google Fonts](https://fonts.google.com/)
+- [PrimeFlex](https://www.primefaces.org/primeflex/)
