@@ -3,18 +3,19 @@
 .slider {
 	display: flex;
 	flex-direction: column;
-	justify-items: space-between;
+	justify-content: space-between;
 	height: 35rem;
 	position: relative;
 	.slide {
+		position: absolute;
+		width: 100%;
 		display: flex;
-		position: relative;
 		height: 35rem;
 		&-bg {
 			position: relative;
 			display: flex;
 			flex: 1 1 auto;
-			&::after {
+			&:after {
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -23,7 +24,7 @@
 				display: block;
 				content: "";
 
-				background-image: linear-gradient(to right, #000 0, transparent 75%, transparent 100%);
+				background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 11%, rgba(255, 255, 255, 0) 100%);
 			}
 			&-image {
 				height: 100%;
@@ -31,6 +32,7 @@
 				object-fit: cover;
 			}
 		}
+
 		&-pane {
 			position: absolute;
 			width: 45%;
