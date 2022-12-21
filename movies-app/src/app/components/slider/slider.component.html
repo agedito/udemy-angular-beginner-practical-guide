@@ -1,27 +1,22 @@
-<pre>{{ items | json }}</pre>
-
 <div class="slider">
-	<div class="slide">
+	<div class="slide" *ngFor="let item of items">
 		<div class="slide-bg">
-			<img class="slide-bg-image" src="https://image.tmdb.org/t/p/original/7zQJYV02yehWrQN6NjKsBorqUUS.jpg" alt="" />
+			<img class="slide-bg-image" [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path" alt="" />
 		</div>
 		<div class="slide-pane">
-			<h2 class="name">The Woman King</h2>
+			<h2 class="name">{{ item.title }}</h2>
 			<div class="meta">
 				<div class="info">
 					<span class="rating">
 						<span class="app-icon">star</span>
-						<span class="rating-value"> 7.8</span>
+						<span class="rating-value"> {{ item.vote_average }}</span>
 						<span>/10</span>
 					</span>
-					<span>800 reviews</span>
-					<span>2022</span>
+					<span>{{ item.vote_count }}</span>
+					<span>{{ item.release_date | date : "yyyy" }}</span>
 				</div>
 			</div>
-			<div class="desc mt-6">
-				The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen,
-				and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.
-			</div>
+			<div class="desc mt-6">{{ item.overview }}</div>
 		</div>
 	</div>
 </div>
