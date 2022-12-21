@@ -7,8 +7,22 @@
 	.slide {
 		display: flex;
 		position: relative;
+		height: 35rem;
 		&-bg {
 			position: relative;
+			display: flex;
+			flex: 1 1 auto;
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: block;
+				content: "";
+
+				background-image: linear-gradient(to right, #000 0, transparent 75%, transparent 100%);
+			}
 			&-image {
 				height: 100%;
 				width: 100%;
