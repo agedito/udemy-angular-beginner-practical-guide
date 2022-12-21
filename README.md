@@ -25,6 +25,8 @@ Code from [**Angular Beginner Practical Guide** udemy course](https://www.udemy.
 ### CSS
 
 -   [Normalize.css](https://necolas.github.io/normalize.css/)
--   [Google Fonts](https://fonts.google.com/)
+-   [Google Fonts](https://developers.google.com/)
+-   [Google Developers Guide](https://fonts.google.com/)
+-   [Google Icons Developers Guide](https://developers.google.com/fonts/docs/material_icons)
 -   [PrimeFlex](https://www.primefaces.org/primeflex/)
 -   [Gradients](https://cssgradient.io/)
