@@ -5,14 +5,21 @@ import { HttpClient } from "@angular/common/http";
 	providedIn: "root"
 })
 export class MoviesService {
+	baseUrl: string = "https://api.themoviedb.org/3/";
+	apiKey: string = "f252dc248f48848d62f9e9194b0b87f9";
+
 	constructor(private http: HttpClient) {}
 
 	getMovies() {
-		let url = this.getMoviesUrl();
+		return this.getEndpoint("movie/upcoming");
+	}
+
+	getEndpoint(endpoint: string) {
+		let url = this.resolveEndpointUrl(endpoint);
 		return this.http.get(url);
 	}
 
-	getMoviesUrl() {
-		return "https://api.themoviedb.org/3/movie/upcoming?api_key=f252dc248f48848d62f9e9194b0b87f9";
+	resolveEndpointUrl(endpoint: string) {
+		return this.baseUrl + endpoint + "?api_key=" + this.apiKey;
 	}
 }
