@@ -7,12 +7,12 @@ import { MoviesService } from "src/app/services/movies.service";
 	styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-	movies: any = [];
+	popularMovies: any = [];
 
 	constructor(private moviesService: MoviesService) {}
 	ngOnInit() {
-		this.moviesService.getMovies().subscribe((response: any) => {
-			this.movies = response.results;
+		this.moviesService.getMoviesEndpoint("upcoming").subscribe((response: any) => {
+			this.popularMovies = response.results;
 		});
 	}
 }

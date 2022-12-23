@@ -10,16 +10,12 @@ export class MoviesService {
 
 	constructor(private http: HttpClient) {}
 
-	getMovies() {
-		return this.getEndpoint("movie/upcoming");
-	}
-
-	getEndpoint(endpoint: string) {
+	getMoviesEndpoint(endpoint: string) {
 		let url = this.resolveEndpointUrl(endpoint);
 		return this.http.get(url);
 	}
 
 	resolveEndpointUrl(endpoint: string) {
-		return this.baseUrl + endpoint + "?api_key=" + this.apiKey;
+		return this.baseUrl + "movie/" + endpoint + "?api_key=" + this.apiKey;
 	}
 }
