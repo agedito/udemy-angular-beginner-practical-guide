@@ -12,7 +12,17 @@ export class MoviesService {
 
 	constructor(private http: HttpClient) {}
 
-	getMoviesEndpoint(endpoint: string, count: number = 12) {
+	getMovies(endpoint: string, count: number = 12) {
+		let url = this.resolveEndpointUrl(endpoint);
+		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results.slice(0, count))));
+	}
+
+	searchMovies(page: number) {
+		let url = this.baseUrl + "movie/popular?page=" + page + "&api_key=" + this.apiKey;
+		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results)));
+	}
+
+	getTvs(endpoint: string, count: number = 12) {
 		let url = this.resolveEndpointUrl(endpoint);
 		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results.slice(0, count))));
 	}
