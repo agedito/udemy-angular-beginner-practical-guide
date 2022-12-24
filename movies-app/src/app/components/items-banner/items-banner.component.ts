@@ -8,4 +8,5 @@ import { Movie } from "src/app/models/movie";
 })
 export class ItemsBannerComponent {
 	@Input() items: Movie[] = [];
+	@Input() title: string = "";
 }
