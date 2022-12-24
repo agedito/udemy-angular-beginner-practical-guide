@@ -13,9 +13,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ItemsBannerComponent } from "./components/items-banner/items-banner.component";
 import { ItemComponent } from "./components/item/item.component";
 import { PaginatorModule } from "primeng/paginator";
+import { MovieComponent } from './pages/movie/movie.component';
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MoviesComponent, SliderComponent, ItemsBannerComponent, ItemComponent],
+	declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MoviesComponent, SliderComponent, ItemsBannerComponent, ItemComponent, MovieComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, PaginatorModule],
 	providers: [],
 	bootstrap: [AppComponent]

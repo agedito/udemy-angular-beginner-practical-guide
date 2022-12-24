@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { MoviesDto } from "../models/movie";
 import { switchMap, of } from "rxjs";
+import { Movie } from "src/app/models/movie";
 
 @Injectable({
 	providedIn: "root"
@@ -15,6 +16,15 @@ export class MoviesService {
 	getMovies(endpoint: string, count: number = 12) {
 		let url = this.resolveEndpointUrl(endpoint);
 		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results.slice(0, count))));
+	}
+
+	getMovie(id: string) {
+		let url = this.resolveMovieUrl(id);
+		return this.http.get<Movie>(url);
+	}
+
+	resolveMovieUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "?api_key=" + this.apiKey;
 	}
 
 	searchMovies(page: number) {
