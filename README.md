@@ -22,6 +22,10 @@ Code from [**Angular Beginner Practical Guide** udemy course](https://www.udemy.
 -   [The Movies DB](https://www.themoviedb.org/)
 -   [The Movies DB API Documentation](https://developers.themoviedb.org/)
 
+### Components
+
+-   [PrimeNg](https://www.primefaces.org/primeng/)
+
 ### CSS
 
 -   [Normalize.css](https://necolas.github.io/normalize.css/)
