@@ -49,7 +49,9 @@
 				</div>
 			</div>
 		</p-tabPanel>
-		<p-tabPanel header="Videos">Content 2</p-tabPanel>
+		<p-tabPanel header="Videos">
+			{{ movieVideos | json }}
+		</p-tabPanel>
 		<p-tabPanel header="Photos">Content 3</p-tabPanel>
 	</p-tabView>
 </ng-container>
