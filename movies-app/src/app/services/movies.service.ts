@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { MoviesDto } from "../models/movie";
+import { switchMap, of } from "rxjs";
 
 @Injectable({
 	providedIn: "root"
@@ -10,9 +12,9 @@ export class MoviesService {
 
 	constructor(private http: HttpClient) {}
 
-	getMoviesEndpoint(endpoint: string) {
+	getMoviesEndpoint(endpoint: string, count: number = 12) {
 		let url = this.resolveEndpointUrl(endpoint);
-		return this.http.get(url);
+		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results.slice(0, count))));
 	}
 
 	resolveEndpointUrl(endpoint: string) {

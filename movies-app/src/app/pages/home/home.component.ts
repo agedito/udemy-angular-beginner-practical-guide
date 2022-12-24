@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
 
 	constructor(private moviesService: MoviesService) {}
 	ngOnInit() {
-		this.moviesService.getMoviesEndpoint("popular").subscribe((response: any) => {
-			this.popularMovies = response.results;
+		this.moviesService.getMoviesEndpoint("popular").subscribe((movies) => {
+			this.popularMovies = movies;
 		});
-		this.moviesService.getMoviesEndpoint("upcoming").subscribe((response: any) => {
-			this.upcomingMovies = response.results;
+		this.moviesService.getMoviesEndpoint("upcoming").subscribe((movies) => {
+			this.upcomingMovies = movies;
 		});
-		this.moviesService.getMoviesEndpoint("top_rated").subscribe((response: any) => {
-			this.topRatedMovies = response.results;
+		this.moviesService.getMoviesEndpoint("top_rated").subscribe((movies) => {
+			this.topRatedMovies = movies;
 		});
 	}
 }
