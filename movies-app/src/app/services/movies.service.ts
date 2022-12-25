@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { MovieImages, MoviesDto, MovieVideosDto } from "../models/movie";
+import { MovieCredits, MovieImages, MoviesDto, MovieVideosDto } from "../models/movie";
 import { switchMap, of } from "rxjs";
 import { Movie } from "src/app/models/movie";
 
@@ -28,6 +28,11 @@ export class MoviesService {
 		return this.http.get<MovieImages>(url);
 	}
 
+	getMovieCredits(id: string) {
+		let url = this.resolveMovieCreditsUrl(id);
+		return this.http.get<MovieCredits>(url);
+	}
+
 	getMovie(id: string) {
 		let url = this.resolveMovieUrl(id);
 		return this.http.get<Movie>(url);
@@ -39,6 +44,9 @@ export class MoviesService {
 
 	resolveMovieImagesUrl(id: string) {
 		return this.baseUrl + "movie/" + id + "/images?api_key=" + this.apiKey;
+	}
+	resolveMovieCreditsUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "/credits?api_key=" + this.apiKey;
 	}
 
 	resolveMovieVideosUrl(id: string) {
