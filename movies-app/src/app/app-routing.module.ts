@@ -23,6 +23,10 @@ const routes: Routes = [
 		component: GenresComponent
 	},
 	{
+		path: "movies/genres/:genreId",
+		component: MoviesComponent
+	},
+	{
 		path: "**",
 		redirectTo: ""
 	}
