@@ -18,9 +18,10 @@ import { ImageModule } from "primeng/image";
 import { CarouselModule } from "primeng/carousel";
 import { MovieComponent } from "./pages/movie/movie.component";
 import { VideoEmbedComponent } from "./components/video-embed/video-embed.component";
+import { GenresComponent } from './pages/genres/genres.component';
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MoviesComponent, SliderComponent, ItemsBannerComponent, ItemComponent, MovieComponent, VideoEmbedComponent],
+	declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MoviesComponent, SliderComponent, ItemsBannerComponent, ItemComponent, MovieComponent, VideoEmbedComponent, GenresComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, PaginatorModule, TabViewModule, ImageModule, CarouselModule],
 	providers: [],
 	bootstrap: [AppComponent]
