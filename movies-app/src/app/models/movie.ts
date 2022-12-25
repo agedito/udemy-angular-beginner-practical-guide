@@ -13,6 +13,10 @@ export interface Movie {
 	video: boolean;
 	vote_average: number;
 	vote_count: number;
+	revenue: number;
+	runtime: number;
+	status: string;
+	genres: Genre[];
 }
 
 export interface MoviesDto {
@@ -20,4 +24,32 @@ export interface MoviesDto {
 	results: Movie[];
 	total_results: number;
 	total_pages: number;
+}
+
+export interface Genre {
+	id: number;
+	name: string;
+}
+
+export interface MovieVideosDto {
+	id: number;
+	results: MovieVideo[];
+}
+
+export interface MovieVideo {
+	site: string;
+	key: string;
+}
+
+export interface MovieImages {
+	backdrops: {
+		file_path: string;
+	}[];
+}
+
+export interface MovieCredits {
+	cast: {
+		name: string;
+		profile_path: string;
+	}[];
 }

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { MoviesDto } from "../models/movie";
+import { MovieCredits, MovieImages, MoviesDto, MovieVideosDto } from "../models/movie";
 import { switchMap, of } from "rxjs";
+import { Movie } from "src/app/models/movie";
 
 @Injectable({
 	providedIn: "root"
@@ -15,6 +16,41 @@ export class MoviesService {
 	getMovies(endpoint: string, count: number = 12) {
 		let url = this.resolveEndpointUrl(endpoint);
 		return this.http.get<MoviesDto>(url).pipe(switchMap((res) => of(res.results.slice(0, count))));
+	}
+
+	getMovieVideos(id: string) {
+		let url = this.resolveMovieVideosUrl(id);
+		return this.http.get<MovieVideosDto>(url).pipe(switchMap((res) => of(res.results)));
+	}
+
+	getMovieImages(id: string) {
+		let url = this.resolveMovieImagesUrl(id);
+		return this.http.get<MovieImages>(url);
+	}
+
+	getMovieCredits(id: string) {
+		let url = this.resolveMovieCreditsUrl(id);
+		return this.http.get<MovieCredits>(url);
+	}
+
+	getMovie(id: string) {
+		let url = this.resolveMovieUrl(id);
+		return this.http.get<Movie>(url);
+	}
+
+	resolveMovieUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "?api_key=" + this.apiKey;
+	}
+
+	resolveMovieImagesUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "/images?api_key=" + this.apiKey;
+	}
+	resolveMovieCreditsUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "/credits?api_key=" + this.apiKey;
+	}
+
+	resolveMovieVideosUrl(id: string) {
+		return this.baseUrl + "movie/" + id + "/videos?api_key=" + this.apiKey;
 	}
 
 	searchMovies(page: number) {
