@@ -14,12 +14,13 @@ import { ItemsBannerComponent } from "./components/items-banner/items-banner.com
 import { ItemComponent } from "./components/item/item.component";
 import { PaginatorModule } from "primeng/paginator";
 import { TabViewModule } from "primeng/tabview";
+import { ImageModule } from "primeng/image";
 import { MovieComponent } from "./pages/movie/movie.component";
-import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { VideoEmbedComponent } from "./components/video-embed/video-embed.component";
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MoviesComponent, SliderComponent, ItemsBannerComponent, ItemComponent, MovieComponent, VideoEmbedComponent],
-	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, PaginatorModule, TabViewModule],
+	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, PaginatorModule, TabViewModule, ImageModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })
